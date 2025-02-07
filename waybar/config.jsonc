@@ -1,0 +1,59 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 4,
+  "modules-left": [ "clock" ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [ "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate"
+  },
+  "clock": {
+    "format": "{:%I:%M %p}"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": "{icon} {format_source}",
+    "format-muted": "",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphones": [ " ", " ", " " ],
+      "handsfree": "",
+      "headset": [ " ", " ", " " ],
+      "phone": [ " ", " ", " " ],
+      "portable": [ " ", " ", " " ],
+      "car": [ " ", " ", " " ],
+      "default": [ "", "", "" ]
+    },
+    "on-click": "sleep 0.1 && pavucontrol"
+  },
+  "network": {
+    "format-wifi": "WiFi {signalStrength}%",
+    "format-ethernet": "ETH",
+    "format-disconnected": "Disconnected"
+  },
+  "cpu": {
+    "format": "CPU {usage}%"
+  },
+  "memory": {
+    "format": "MEM {}%"
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% @",
+    "format-plugged": "{capacity}% @ @",
+    "format-alt": "{time} {icon}",
+    "format-icons": [ "@", "@", "@", "@", "@", "@" ]
+  }
+}
