@@ -1,0 +1,6 @@
+2025/02/06-22:52:52.294 4c4 Creating DB /home/tumidanski/.config/chromium/Default/IndexedDB/https_mynixos.com_0.indexeddb.leveldb since it was missing.
+2025/02/06-22:52:52.319 4c4 Reusing MANIFEST /home/tumidanski/.config/chromium/Default/IndexedDB/https_mynixos.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/06-22:52:52.402 4ce Level-0 table #5: started
+2025/02/06-22:52:52.410 4ce Level-0 table #5: 1268 bytes OK
+2025/02/06-22:52:52.422 4ce Delete type=0 #3
+2025/02/06-22:52:52.422 4c4 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
