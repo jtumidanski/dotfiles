@@ -8,52 +8,80 @@
   "modules-right": [ "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
   "hyprland/workspaces": {
     "format": "{name}",
-    "on-click": "activate"
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+      "urgent": " "
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
   },
   "clock": {
-    "format": "{:%I:%M %p}"
+    "format": " {:L%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%A, %d,%B %Y }</big>\n<tt><small>{calendar}</small></tt>"
   },
   "pulseaudio": {
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{icon} {volume}% {format_source}",
     "format-bluetooth-muted": "{icon} {format_source}",
-    "format-muted": "",
+    "format-muted": "󰝟",
     "format-source": " {volume}%",
     "format-source-muted": "",
     "format-icons": {
-      "headphones": [ " ", " ", " " ],
-      "handsfree": "",
-      "headset": [ " ", " ", " " ],
-      "phone": [ " ", " ", " " ],
-      "portable": [ " ", " ", " " ],
-      "car": [ " ", " ", " " ],
-      "default": [ "", "", "" ]
+      "headphones": [" ", " ", " "],
+      "handsfree": "󰴸",
+      "headset":  [" ", " ", " "],
+      "phone": [" ", " ", " "],
+      "portable": [" ", " ", " "],
+      "car": [" ", " ", " "],
+      "default": ["", "", ""]
     },
     "on-click": "sleep 0.1 && pavucontrol"
   },
   "network": {
-    "format-wifi": "WiFi {signalStrength}%",
-    "format-ethernet": "ETH",
-    "format-disconnected": "Disconnected"
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format-ethernet": " {bandwidthDownOctets}",
+    "format-wifi": "{icon} {signalStrength}%",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} 🖧 ",
+    "on-click": "kitty nmtui"
   },
   "cpu": {
-    "format": "CPU {usage}%"
+    "interval": 5,
+    "format": " {usage:2}%",
+    "tooltip": true
   },
   "memory": {
-    "format": "MEM {}%"
+    "interval": 5,
+    "format": " {}%",
+    "tooltip": true
   },
-
   "battery": {
-    "interval": 30,
+    "interval":30,
     "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
+        "good": 95,
+        "warning": 30,
+        "critical": 20
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% @",
-    "format-plugged": "{capacity}% @ @",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄 ",
     "format-alt": "{time} {icon}",
-    "format-icons": [ "@", "@", "@", "@", "@", "@" ]
+    "format-icons": [
+    "󰁻",
+    "󰁼",
+    "󰁾",
+    "󰂀",
+    "󰂂",
+    "󰁹"
+    ],
   }
 }
