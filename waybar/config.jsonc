@@ -3,18 +3,16 @@
   "position": "top",
   "height": 30,
   "spacing": 4,
-  "modules-left": [ "clock" ],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": [ "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
+  "modules-left": [ "clock", "custom/wallpaper" ],
+  "modules-center": ["hyprland/workspaces" ],
+  "modules-right": [ "pulseaudio", "network", "cpu", "memory", "battery", "tray" ],
   "hyprland/workspaces": {
     "format": "{name}",
     "format-icons": {
       "default": " ",
       "active": " ",
       "urgent": " "
-    },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+    }
   },
   "clock": {
     "format": " {:L%H:%M}",
@@ -82,6 +80,11 @@
     "󰂀",
     "󰂂",
     "󰁹"
-    ],
+    ]
+  },
+  "custom/wallpaper": {
+    "format": "",
+    "on-click": "$HOME/.config/scripts/swww_randomize.sh",
+    "tooltip": false
   }
 }
